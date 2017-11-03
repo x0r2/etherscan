@@ -1,5 +1,4 @@
-import url from 'url';
-import got from 'got';
+import request from 'request-promise-native';
 
 export default class Etherscan {
     constructor(apiKey) {
@@ -44,8 +43,10 @@ export default class Etherscan {
         if (this._apiKey) {
             params.apikey = this._apiKey;
         }
-        return (await got(`${this._apiUrl}?${new url.URLSearchParams(params)}`, {
+        return (await request(this._apiUrl, {
+            method: 'POST',
+            form: params,
             json: true
-        })).body;
+        }));
     }
 }
