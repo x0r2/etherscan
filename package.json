@@ -1,7 +1,7 @@
 {
   "name": "etherscan",
   "version": "0.1.0",
-  "description": "JavaScript library for communication with the Etherscan API.",
+  "description": "Node.js library for communicating with the Etherscan API.",
   "author": "x0r2",
   "license": "MIT",
   "repository": {
