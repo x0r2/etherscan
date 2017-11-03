@@ -10,7 +10,7 @@ export default class Etherscan {
         return this._moduleAccount({
             action: 'balance',
             address: options.address,
-            tag: options.tag
+            tag: options.tag || 'latest'
         });
     }
 
@@ -18,7 +18,7 @@ export default class Etherscan {
         return this._moduleAccount({
             action: 'balancemulti',
             address: options.address,
-            tag: options.tag
+            tag: options.tag || 'latest'
         });
     }
 
@@ -43,10 +43,18 @@ export default class Etherscan {
         if (this._apiKey) {
             params.apikey = this._apiKey;
         }
-        return (await request(this._apiUrl, {
+        const data = await request(this._apiUrl, {
             method: 'POST',
+            qsStringifyOptions: {
+                arrayFormat: 'repeat'
+            },
             form: params,
             json: true
-        }));
+        });
+
+        if (data.status !== '1') {
+            return Promise.reject(`API returned result "${data.result}"`);
+        }
+        return data.result;
     }
 }
