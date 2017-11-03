@@ -1,2 +1,2 @@
 # etherscan
-JavaScript library for communication with the Etherscan API.
+Node.js library for communicating with the Etherscan API.
