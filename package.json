@@ -8,7 +8,13 @@
     "type": "git",
     "url": "https://github.com/x0r2/etherscan.git"
   },
+  "devDependencies": {
+    "request": "^2.34.0"
+  },
   "dependencies": {
-    "got": "^7.1.0"
+    "request-promise-native": "^1.0.5"
+  },
+  "peerDependencies": {
+    "request": "^2.34.0"
   }
 }
