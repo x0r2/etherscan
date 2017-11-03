@@ -8,6 +8,25 @@
     "type": "git",
     "url": "https://github.com/x0r2/etherscan.git"
   },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "keywords": [
+    "etherscan",
+    "etherscan api",
+    "etherscan.io",
+    "ethereum api"
+  ],
+  "files": [
+    "index.mjs",
+    "index.js",
+    "test.js"
+  ],
+  "scripts": {
+    "build": "babel index.mjs -o index.js",
+    "test": "jest",
+    "prepare": "npm run build && npm test"
+  },
   "devDependencies": {
     "request": "^2.34.0"
   },
