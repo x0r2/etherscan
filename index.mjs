@@ -26,8 +26,8 @@ export default class Etherscan {
         return this._moduleAccount({
             action: 'txlist',
             address: options.address,
-            startblock: options.startblock,
-            endblock: options.endblock,
+            startblock: options.startBlock,
+            endblock: options.endBlock,
             sort: options.sort
         });
     }
