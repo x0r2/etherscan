@@ -41,7 +41,7 @@ const etherscan = new Etherscan(API_KEY); // Some methods working without API_KE
 
 (async () => {
     const data = await etherscan.getEtherBalance({
-        address: 'ADDRESS'
+        address: '0x00'
     });
 })();
 ```
@@ -56,8 +56,8 @@ Get Ether balance for a single address.
 
 ```js
 etherscan.getEtherBalance({
-    address: 'ADDRESS',
-    tag: 'latest' // optional, default 'latest'
+    address: '0x00',
+    tag: 'latest' // Optional, default 'latest'
 });
 ```
 
@@ -67,8 +67,8 @@ Get Ether balance for multiple addresses in a single call.
 
 ```js
 etherscan.getEtherBalanceMulti({
-    address: ['ADDRESS', 'ADDRESS2'],
-    tag: 'latest' // optional, default 'latest'
+    address: ['0x00', '0x01'],
+    tag: 'latest' // Optional, default 'latest'
 });
 ```
 
@@ -78,10 +78,10 @@ Get a list of `normal` transactions by address.
 
 ```js
 etherscan.getTxList({
-    address: 'ADDRESS',
-    startblock: 0, // optional
-    endblock: 0, // optional
-    sort: 'desc' // optional, default 'asc'
+    address: '0x00',
+    startblock: 0, // Optional
+    endblock: 0, // Optional
+    sort: 'desc' // Optional, default 'asc'
 });
 ```
 
@@ -91,9 +91,9 @@ Get a list of `internal` transactions by address.
 
 ```js
 etherscan.getTxList({
-    address: 'ADDRESS',
-    startblock: 0, // optional
-    endblock: 0, // optional
-    sort: 'desc' // optional, default 'asc'
+    address: '0x00',
+    startblock: 0, // Optional
+    endblock: 0, // Optional
+    sort: 'desc' // Optional, default 'asc'
 });
 ```
