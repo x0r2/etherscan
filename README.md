@@ -41,7 +41,59 @@ const etherscan = new Etherscan(API_KEY); // Some methods working without API_KE
 
 (async () => {
     const data = await etherscan.getEtherBalance({
-        address: '0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae'
+        address: 'ADDRESS'
     });
 })();
+```
+
+## API
+
+### Accounts
+
+#### getEtherBalance
+
+Get Ether balance for a single address.
+
+```js
+etherscan.getEtherBalance({
+    address: 'ADDRESS',
+    tag: 'latest' // optional, default 'latest'
+});
+```
+
+#### getEtherBalanceMulti
+
+Get Ether balance for multiple addresses in a single call.
+
+```js
+etherscan.getEtherBalanceMulti({
+    address: ['ADDRESS', 'ADDRESS2'],
+    tag: 'latest' // optional, default 'latest'
+});
+```
+
+#### getTxList
+
+Get a list of `normal` transactions by address.
+
+```js
+etherscan.getTxList({
+    address: 'ADDRESS',
+    startblock: 0, // optional
+    endblock: 0, // optional
+    sort: 'desc' // optional, default 'asc'
+});
+```
+
+#### getTxListInternal
+
+Get a list of `internal` transactions by address.
+
+```js
+etherscan.getTxList({
+    address: 'ADDRESS',
+    startblock: 0, // optional
+    endblock: 0, // optional
+    sort: 'desc' // optional, default 'asc'
+});
 ```
