@@ -32,6 +32,16 @@ export default class Etherscan {
         });
     }
 
+    getTxListInternal(options) {
+        return this._moduleAccount({
+            action: 'txlistinternal',
+            address: options.address,
+            startblock: options.startBlock,
+            endblock: options.endBlock,
+            sort: options.sort
+        });
+    }
+
     _moduleAccount(params) {
         return this._query({
             ...params,
