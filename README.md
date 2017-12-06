@@ -90,7 +90,7 @@ etherscan.getTxList({
 Get a list of `internal` transactions by address.
 
 ```js
-etherscan.getTxList({
+etherscan.getTxListInternal({
     address: '0x00',
     startblock: 0, // Optional
     endblock: 0, // Optional
